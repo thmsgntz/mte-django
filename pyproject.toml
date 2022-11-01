@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "mte-django"
+version = "0.1.0"
+description = "mathese emoi website in django"
+authors = ["Thomas <guntho.neo@gmail.com>"]
+license = "MIT License"
+readme = "README.md"
+packages = [{include = "mte_django"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+django = "^4.1.3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
