@@ -13,7 +13,10 @@ usr.set_password('raw password')
 usr.save()
 ```
 
-# Tutorial 2 -- Database (ok)
+# Tutorial 2 -- Database (ok) 
+Lien -> https://docs.djangoproject.com/en/4.1/intro/tutorial02/
+
+- Types objects : https://docs.djangoproject.com/en/4.1/ref/models/fields/
 
 ## Adding Annuaire in database (ok)
 
@@ -41,3 +44,13 @@ usr.save()
    > and runs them against your database - essentially, synchronizing the changes you made to your models 
    > with the schema in the database.
    
+# Tutorial 3 (ongoing) 
+Lien -> https://docs.djangoproject.com/en/4.1/intro/tutorial03/
+
+- URLdispatcher : https://docs.djangoproject.com/en/4.1/topics/http/urls/
+> A clean, elegant URL scheme is an important detail in a high-quality web application. 
+> Django lets you design URLs however you want, with no framework limitations.
+
+- Templates Polls ([Write views that actually do something](https://docs.djangoproject.com/en/4.1/intro/tutorial03/#write-views-that-actually-do-something)) => Done
+
+Next step (Render) : https://docs.djangoproject.com/en/4.1/intro/tutorial03/#a-shortcut-render
