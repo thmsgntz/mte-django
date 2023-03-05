@@ -4,7 +4,8 @@ Refont of https://mathese-emoi.fr/ using Django framework
 # Tools 
 
 - Bleeding edge django3.2 template focused on code quality and security:
-    https://github.com/wemake-services/wemake-django-template
+    - https://github.com/wemake-services/wemake-django-template
+    - https://wemake-python-styleguide.readthedocs.io/en/latest/index.html
 
 # API Access Objects
 
@@ -73,10 +74,12 @@ Lien -> https://docs.djangoproject.com/en/4.1/intro/tutorial03/
     <li><a href="/polls/{{ question.id }}/">{{ question.question_text }}</a></li>
   ```
   - Dans polls/urls.py:
-  ```python
-    # the 'name' value as called by the {% url %} template tag
-    path('<int:question_id>/', views.detail, name='detail'),
-  ```
+```python
+from django.urls import path
+from mte_website.polls import views
+# the 'name' value as called by the {% url %} template tag
+path('<int:question_id>/', views.detail, name='detail'),
+```
   - Du coup on peut utiliser le tag { % url } dans l'html :
   ```html
     <li><a href="{% url 'detail' question.id %}">{{ question.question_text }}</a></li>
