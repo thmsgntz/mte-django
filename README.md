@@ -1,6 +1,16 @@
 # mte-django
 Refont of https://mathese-emoi.fr/ using Django framework
 
+# Tools 
+
+- Bleeding edge django3.2 template focused on code quality and security:
+    https://github.com/wemake-services/wemake-django-template
+
+# API Access Objects
+
+- QuerySets : https://docs.djangoproject.com/en/4.1/ref/models/querysets/#all
+- Méthodes sur les relations https://docs.djangoproject.com/en/4.1/ref/models/relations/
+
 # Admin
 
 ## Forget password
@@ -51,6 +61,30 @@ Lien -> https://docs.djangoproject.com/en/4.1/intro/tutorial03/
 > A clean, elegant URL scheme is an important detail in a high-quality web application. 
 > Django lets you design URLs however you want, with no framework limitations.
 
-- Templates Polls ([Write views that actually do something](https://docs.djangoproject.com/en/4.1/intro/tutorial03/#write-views-that-actually-do-something)) => Done
+- Template Polls ([Write views that actually do something](https://docs.djangoproject.com/en/4.1/intro/tutorial03/#write-views-that-actually-do-something)) => Done
 
-Next step (Render) : https://docs.djangoproject.com/en/4.1/intro/tutorial03/#a-shortcut-render
+- Render Done (Index/Detail):
+> The render() function takes the request object as its first argument, a template name as its second argument and a 
+> dictionary as its optional third argument. It returns an HttpResponse object of the given template rendered with the given context.
+
+- Removing hardcoded URLs in templates :
+  - Dans polls/index.html:
+  ```html
+    <li><a href="/polls/{{ question.id }}/">{{ question.question_text }}</a></li>
+  ```
+  - Dans polls/urls.py:
+  ```python
+    # the 'name' value as called by the {% url %} template tag
+    path('<int:question_id>/', views.detail, name='detail'),
+  ```
+  - Du coup on peut utiliser le tag { % url } dans l'html :
+  ```html
+    <li><a href="{% url 'detail' question.id %}">{{ question.question_text }}</a></li>
+  ```
+  - Si on change l'url dans urls.py, pas d'action à faire dans le template html. Et c'est pris en compte.
+
+- Namespacing URL names
+  - Pour différencier les 'detail' de différentes app, on peut ajouter un namespace dans polls/urls.py:
+  `app_name = 'polls'`
+  - Puis dans html:
+  `{% url 'detail' question.id %}`
