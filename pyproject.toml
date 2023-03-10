@@ -5,7 +5,7 @@ description = "mathese emoi website in django"
 authors = ["Thomas <guntho.neo@gmail.com>"]
 license = "MIT License"
 readme = "README.md"
-packages = [{include = "mte_django"}]
+#packages = [{include = "mte_django"}]
 
 [tool.poetry.dependencies]
 python = "^3.10"
