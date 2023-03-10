@@ -1,0 +1,54 @@
+# See https://pre-commit.com for more information
+# See https://pre-commit.com/hooks.html for more hooks
+
+repos:
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v3.2.0
+    hooks:
+    -   id: trailing-whitespace
+    -   id: end-of-file-fixer
+    -   id: check-yaml
+    -   id: check-added-large-files
+    -   id: check-toml
+-   repo: https://github.com/PyCQA/isort
+    rev: 5.12.0
+    hooks:
+      - id: isort
+-   repo: https://github.com/asottile/add-trailing-comma
+    rev: v2.4.0
+    hooks:
+    -   id: add-trailing-comma
+-   repo: local
+    hooks:
+    -   id: autopep8
+        name: autopep8
+        description: autopep8
+        entry: autopep8 --in-place --aggressive
+        language: python
+        types: [ python ]
+    -   id: autoflake
+        name: autoflake
+        description: autoflake
+        entry: autoflake --in-place --remove-unused-variables
+        language: python
+        types: [ python ]
+    -   id: docformatter
+        name: docformatter
+        description: docformatter
+        entry: docformatter
+        args: [ --in-place ]
+        language: python
+        types: [ python ]
+    -   id: unify
+        name: unify
+        description: unify
+        entry: unify
+        args: [ --in-place ]
+        language: python
+        types: [ python ]
+    -   id: flakeheaven
+        name: flakeheaven
+        description: flakeheaven
+        entry: flakeheaven lint
+        language: python
+        types: [ python ]

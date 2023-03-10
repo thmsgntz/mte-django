@@ -1,20 +1,20 @@
 import os
 from enum import Enum, auto
 
-from django.http import HttpResponse, Http404
-from django.shortcuts import render, get_object_or_404
+from django.http import Http404, HttpResponse
+from django.shortcuts import get_object_or_404, render
 
 from .models import Question
 
 
 # Create your views here.
 class TemplatePathPolls(Enum):
-    _PATH = "polls"
+    _PATH = 'polls'
     INDEX = auto()
     DETAIL = auto()
 
     def __str__(self):
-        return os.path.join(self._PATH.value, self.name.lower() + ".html")
+        return os.path.join(self._PATH.value, self.name.lower() + '.html')
 
 
 def index(request):
@@ -26,8 +26,8 @@ def index(request):
     # return HttpResponse(template.render(context, request))
     template = str(TemplatePathPolls.INDEX)
 
-    latest_question_list = Question.objects.order_by("-pub_date")[:5]
-    context = {"latest_question_list": latest_question_list}
+    latest_question_list = Question.objects.order_by('-pub_date')[:5]
+    context = {'latest_question_list': latest_question_list}
     return render(request, template, context)
 
 
@@ -39,7 +39,7 @@ def detail(request, question_id):
     question: Question = get_object_or_404(Question, pk=question_id)
     template = str(TemplatePathPolls.DETAIL)
 
-    return render(request, template, {"question": question})
+    return render(request, template, {'question': question})
 
 
 def results(request, question_id):

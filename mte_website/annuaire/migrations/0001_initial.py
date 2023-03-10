@@ -10,63 +10,65 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name="Categorie",
+            name='Categorie',
             fields=[
                 (
-                    "id",
+                    'id',
                     models.BigAutoField(
                         auto_created=True,
                         primary_key=True,
                         serialize=False,
-                        verbose_name="ID",
+                        verbose_name='ID',
                     ),
                 ),
-                ("titre", models.CharField(max_length=200)),
+                ('titre', models.CharField(max_length=200)),
             ],
         ),
         migrations.CreateModel(
-            name="TagsStructure",
+            name='TagsStructure',
             fields=[
                 (
-                    "id",
+                    'id',
                     models.BigAutoField(
                         auto_created=True,
                         primary_key=True,
                         serialize=False,
-                        verbose_name="ID",
+                        verbose_name='ID',
                     ),
                 ),
-                ("nom", models.CharField(max_length=200)),
+                ('nom', models.CharField(max_length=200)),
             ],
         ),
         migrations.CreateModel(
-            name="Structure",
+            name='Structure',
             fields=[
                 (
-                    "id",
+                    'id',
                     models.BigAutoField(
                         auto_created=True,
                         primary_key=True,
                         serialize=False,
-                        verbose_name="ID",
+                        verbose_name='ID',
                     ),
                 ),
-                ("nom", models.CharField(max_length=200)),
-                ("description", models.CharField(max_length=2000)),
-                ("adresse_postale", models.CharField(max_length=200)),
+                ('nom', models.CharField(max_length=200)),
+                ('description', models.CharField(max_length=2000)),
+                ('adresse_postale', models.CharField(max_length=200)),
                 (
-                    "phone",
-                    models.CharField(max_length=15, verbose_name="Numéro de Télphone"),
+                    'phone',
+                    models.CharField(
+                        max_length=15, verbose_name='Numéro de Télphone',
+                    ),
                 ),
                 (
-                    "last_update",
+                    'last_update',
                     models.DateTimeField(
-                        auto_now=True, verbose_name="Dernière Mise à jour"
+                        auto_now=True, verbose_name='Dernière Mise à jour',
                     ),
                 ),
-                ("mail", models.CharField(max_length=30, verbose_name="Adresse Email")),
-                ("categories", models.ManyToManyField(to="annuaire.categorie")),
-                ("tags", models.ManyToManyField(to="annuaire.tagsstructure")),
+                ('mail', models.CharField(max_length=30, verbose_name='Adresse Email')),
+                ('categories', models.ManyToManyField(to='annuaire.categorie')),
+                ('tags', models.ManyToManyField(to='annuaire.tagsstructure')),
             ],
         ),
     ]
