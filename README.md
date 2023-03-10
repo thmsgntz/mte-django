@@ -4,8 +4,10 @@ Refont of https://mathese-emoi.fr/ using Django framework
 # Tools
 
 - Bleeding edge django3.2 template focused on code quality and security:
-    - https://github.com/wemake-services/wemake-django-template
-    - https://wemake-python-styleguide.readthedocs.io/en/latest/index.html
+    - Wemake-django: https://github.com/wemake-services/wemake-django-template
+    - wemake-python: https://wemake-python-styleguide.readthedocs.io/en/latest/index.html
+    - pre-commit: https://pre-commit.com
+    - isort, autopep8, autoflake, docformatter, unify, flakeheaven
 
 # API Access Objects
 

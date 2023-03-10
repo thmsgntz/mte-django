@@ -14,7 +14,8 @@ class TemplatePathPolls(Enum):
     DETAIL = auto()
 
     def __str__(self):
-        return os.path.join(self._PATH.value, self.name.lower() + '.html')
+        message = '{0}.html'.format(self.name.lower())
+        return os.path.join(self._PATH.value, message)
 
 
 def index(request):
