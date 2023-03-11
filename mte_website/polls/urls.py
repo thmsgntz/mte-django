@@ -1,6 +1,8 @@
-from django.urls import path
+"""Urls for polls."""
 
-from . import views
+from polls import views
+
+from django.urls import path
 
 app_name = 'polls'
 urlpatterns = [

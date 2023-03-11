@@ -57,7 +57,7 @@ Lien -> https://docs.djangoproject.com/en/4.1/intro/tutorial02/
    > and runs them against your database - essentially, synchronizing the changes you made to your models
    > with the schema in the database.
 
-# Tutorial 3 (ongoing)
+# Tutorial 3 (ok polls only)
 Lien -> https://docs.djangoproject.com/en/4.1/intro/tutorial03/
 
 - URLdispatcher : https://docs.djangoproject.com/en/4.1/topics/http/urls/
@@ -93,3 +93,8 @@ path('<int:question_id>/', views.detail, name='detail'),
   `app_name = 'polls'`
   - Puis dans html:
   `{% url 'detail' question.id %}`
+
+# Tutorial 4 Forms (ongoing)
+lien: https://docs.djangoproject.com/en/4.1/intro/tutorial04/
+
+Next : [Use generic views: Less code is better](https://docs.djangoproject.com/en/4.1/intro/tutorial04/#use-generic-views-less-code-is-better)
