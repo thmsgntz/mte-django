@@ -5,13 +5,13 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
     dependencies = [
-        ("annuaire", "0001_initial"),
+        ('annuaire', '0001_initial'),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name="structure",
-            name="description",
+            model_name='structure',
+            name='description',
             field=models.TextField(max_length=2000),
         ),
     ]

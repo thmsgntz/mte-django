@@ -1,0 +1,29 @@
+{
+    "configurations": [
+        {
+            "type": "python",
+            "name": "Manager Check",
+            "file": "mte_website/manage.py",
+            "arguments": ["check"],
+            "workingDir": "$PROJECT_DIR$",
+        },
+        {
+            "type": "command",
+            "name": "pre-commit",
+            "program": "poetry",
+            "args": ["run", "pre-commit", "run", "--files", "$FILE$"],
+            "workingDir": "$PROJECT_DIR$",
+        },
+        {
+            "type": "python",
+            "name": "Manager run",
+            "file": "mte_website/manage.py",
+            "arguments": ["runserver"],
+            "workingDir": "$PROJECT_DIR$",
+            "dependsOn": ["Manager Check"],
+        },
+
+
+    ],
+
+}

@@ -1,5 +1,4 @@
-"""
-ASGI config for mte_website project.
+"""ASGI config for mte_website project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 

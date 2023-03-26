@@ -1,5 +1,7 @@
 from django.contrib import admin
-from .models import Categorie, TagsStructure, Structure
+
+from .models import Categorie, Structure, TagsStructure
+
 # Register your models here.
 
 admin.site.register(Categorie)

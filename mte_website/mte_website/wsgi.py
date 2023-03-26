@@ -1,5 +1,4 @@
-"""
-WSGI config for mte_website project.
+"""WSGI config for mte_website project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
