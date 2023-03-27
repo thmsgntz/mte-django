@@ -107,3 +107,4 @@ Next : [Use generic views: Less code is better](https://docs.djangoproject.com/e
 - [ ] afficher les structures
 - [ ] Mettre le CSS du site
 
+    
