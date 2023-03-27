@@ -98,3 +98,11 @@ path('<int:question_id>/', views.detail, name='detail'),
 lien: https://docs.djangoproject.com/en/4.1/intro/tutorial04/
 
 Next : [Use generic views: Less code is better](https://docs.djangoproject.com/en/4.1/intro/tutorial04/#use-generic-views-less-code-is-better)
+
+# CSS SL
+
+- [ ] first page: index qui redirige un accueil
+- [ ] créer un onglet par application (permanence, blogs, annuaire..)
+  - [ ] commencer par annuaire
+- [ ] afficher les structures
+- [ ] Mettre le CSS du site
