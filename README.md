@@ -64,7 +64,7 @@ Lien -> https://docs.djangoproject.com/en/4.1/intro/tutorial03/
 > A clean, elegant URL scheme is an important detail in a high-quality web application.
 > Django lets you design URLs however you want, with no framework limitations.
 
-- Template Polls ([Write views that actually do something](https://docs.djangoproject.com/en/4.1/intro/tutorial03/#write-views-that-actually-do-something)) => Done
+- Template Polls ([Write views that actually do something](#write-views-that-actually-do-something)) => Done
 
 - Render Done (Index/Detail):
 > The render() function takes the request object as its first argument, a template name as its second argument and a
@@ -101,10 +101,16 @@ Next : [Use generic views: Less code is better](https://docs.djangoproject.com/e
 
 # CSS SL
 
-- [ ] first page: index qui redirige un accueil
+- [x] first page: index qui redirige un accueil
 - [ ] créer un onglet par application (permanence, blogs, annuaire..)
   - [ ] commencer par annuaire
 - [ ] afficher les structures
-- [ ] Mettre le CSS du site
+- [x] Arborescence css/template
+  - https://docs.djangoproject.com/en/4.1/ref/templates/language/#template-inheritance
 
+  - templates/base.html
+  - accueil/templates/accueil/index.html qui extend le base.html
+  - annuaire/templates/annuaire/index.html qui extend le base.html
+
+  - static/css static/img
     
