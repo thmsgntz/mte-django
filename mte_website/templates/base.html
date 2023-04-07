@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+{% load static %}
+<head>
+	<meta name="generator" content="Hugo 0.80.0">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>{% block title %}Ma Thèse Émoi{% endblock %}</title>
+	<meta name="description" content="Bienvenue sur Ma Thèse Émoi, association de soutien psychologique et sociale pour doctorant-es">
+
+	<link rel="stylesheet" href="{% static 'css/accueil/index.css' %}">
+	<link rel="shortcut icon" href="https://mathese-emoi.fr/favicon.ico">
+</head>
+
+<body class="body">
+<header class="header">
+
+	<div class="logo logo--mixed">
+		<div class="container">
+			<a class="logo__link" href="/" title="Ma Thèse Émoi" rel="home">
+				<div class="logo__item logo__imagebox">
+						<img class="logo__img" src="{% static 'img/logo-mte-circle.png' %}" alt="Logo MTE">
+					</div><div class="logo__item logo__text">
+						<div class="logo__title">Ma Thèse Émoi</div>
+						<div class="logo__tagline">Bienveillance - Confidentialité - Solidarité</div>
+					</div>
+			</a>
+		</div>
+	</div>
+</header>
+
+<nav class="menu">
+	<div class="container">
+		<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+			<span class="menu__btn-title" tabindex="-1">Menu</span>
+		</button>
+		<ul class="menu__list">
+			<li class="menu__item menu__item--active">
+				<a class="menu__link" href="/">
+
+					<span class="menu__text">Accueil</span>
+
+				</a>
+			</li>
+			<li class="menu__item">
+				<a class="menu__link" href="/permanence/">
+
+					<span class="menu__text">Permanences</span>
+
+				</a>
+			</li>
+			<li class="menu__item">
+				<a class="menu__link" href="annuaire/">
+
+					<span class="menu__text">Annuaire</span>
+
+				</a>
+			</li>
+			<li class="menu__item">
+				<a class="menu__link" href="/a-propos/">
+
+					<span class="menu__text">À propos</span>
+
+				</a>
+			</li>
+			<li class="menu__item">
+				<a class="menu__link" href="/posts/blog/">
+
+					<span class="menu__text">Blog</span>
+
+				</a>
+			</li>
+			<li class="menu__item">
+				<a class="menu__link" href="/contact/">
+
+					<span class="menu__text">Contact</span>
+
+				</a>
+			</li>
+		</ul>
+	</div>
+</nav>
+
+<div class="content main__content clearfix">
+{% block content %}
+		<p>Ici tu ne seras pas jugé·e pour ce que tu traverses pendant la thèse.
+Notre association repose sur trois valeurs : bienveillance, confidentialité et solidarité.
+Nous intervenons principalement dans la ville de Grenoble, mais si tu as des questions et que tu habites dans une autre ville, on essaiera d’y répondre également :)</p>
+{% endblock %}
+	</div>
+</body>
