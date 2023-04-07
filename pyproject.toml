@@ -39,13 +39,16 @@ enable_extensions = "G"
 accept_encodings = "utf-8"
 max_complexity = 6
 
+# See https://wemake-python-styleguide.readthedocs.io/en/0.17.0/pages/usage/violations/
 [tool.flakeheaven.plugins]
-"flake8-*" = ["+*"]
+"flake8-*" = ["+*", "-D100", "-D101", "-D103"]
+"flake8-isort" = ["+*", "-I001", "-I004"]
 mccabe = ["+*"]
 "pep8-naming" = ["+*"]
 pycodestyle = ["+*"]
 pyflakes = ["+*"]
-"wemake-python-styleguide" = ["+*"]
+"wemake-python-styleguide" = ["+*", "-WPS411", "-WPS407"]
+#ignore = ["D104","D106","D401","W504","X100","RST303","RST304","DAR103","DAR203","WPS411","WPS407","I004"]
 
 [tool.black]
 skip_string_normalization = true
