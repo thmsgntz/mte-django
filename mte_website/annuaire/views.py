@@ -1,7 +1,7 @@
 # Create your views here.
-from django.http import HttpResponse
+from django.http import HttpRequest, HttpResponse
 from django.shortcuts import render
 
 
-def index(request):
-    return HttpResponse("Hello, world. You're at the Annuaire index!")
+def index(request: HttpRequest) -> HttpResponse:
+    return render(request, 'annuaire/index.html', {})
