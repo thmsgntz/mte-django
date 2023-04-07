@@ -1,3 +1,4 @@
+# https://pre-commit.com/#pre-commit-run
 #exclude: '^(?:front/.*|back/api.*|back/schemas/.*)'
 files: '^mte_website/.*py$' # https://regex101.com/
 repos:
@@ -52,3 +53,13 @@ repos:
         language: python
         verbose: true
         types: [ python ]
+
+    -   id: django-check
+        name: django-check
+        descirption: run django manage.py check
+        entry: /Users/guntho/Library/Caches/pypoetry/virtualenvs/mte-django-2tBdu-fU-py3.10/bin/python mte_website/manage.py check
+        language: script
+        types: [ python ]
+        pass_filenames: false
+        always_run: true
+
