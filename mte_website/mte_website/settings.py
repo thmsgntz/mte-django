@@ -60,6 +60,7 @@ ROOT_URLCONF = 'mte_website.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        # Ajout du repertoire de template html de base.html
         'DIRS': [
             BASE_DIR / 'templates/',
         ],

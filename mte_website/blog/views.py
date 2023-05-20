@@ -1,7 +1,8 @@
 # Create your views here.
+from typing import Any
+
 from django.http import HttpResponse
-from django.shortcuts import render
 
 
-def index(request):
+def index(request: Any) -> HttpResponse:
     return HttpResponse("Hello, world. You're at the Blogs index.")

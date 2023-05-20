@@ -41,58 +41,16 @@
 			<span class="menu__btn-title" tabindex="-1">Menu</span>
 		</button>
 		<ul class="menu__list">
-			<li class="menu__item menu__item--active">
-				<a class="menu__link" href="/">
-
-					<span class="menu__text">Accueil</span>
-
-				</a>
-			</li>
-			<li class="menu__item">
-				<a class="menu__link" href="/permanence/">
-
-					<span class="menu__text">Permanences</span>
-
-				</a>
-			</li>
+			<!--<li class="menu__item menu__item--active">-->
 
 			{% show_onglets as onglets %}
 			{% for onglet in onglets %}
-    			<li>
+    			<li class="menu__item">
 					<a class="menu__link" href={{ onglet.val_href }}>
-						{{ onglet.name }}
+						<span class="menu__text">{{ onglet.name }}</span>
 					</a>
 				</li>
 			{% endfor %}
-
-			<li class="menu__item">
-				<a class="menu__link" href="{% url 'annuaire/index' %}">
-					<span class="menu__text">Custom Annuaire</span>
-
-				</a>
-			</li>
-
-			<li class="menu__item">
-				<a class="menu__link" href="/a-propos/">
-
-					<span class="menu__text">À propos</span>
-
-				</a>
-			</li>
-			<li class="menu__item">
-				<a class="menu__link" href="/posts/blog/">
-
-					<span class="menu__text">Blog</span>
-
-				</a>
-			</li>
-			<li class="menu__item">
-				<a class="menu__link" href="/contact/">
-
-					<span class="menu__text">Contact</span>
-
-				</a>
-			</li>
 		</ul>
 	</div>
 </nav>

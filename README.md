@@ -102,9 +102,9 @@ Next : [Use generic views: Less code is better](https://docs.djangoproject.com/e
 # CSS SL
 
 - [x] first page: index qui redirige un accueil
-- [ ] créer un onglet par application (permanence, blogs, annuaire..)
-  - [ ] commencer par annuaire
-  - [ ] Pour ajouter les onglets avec une fonction : https://docs.djangoproject.com/en/4.2/howto/custom-template-tags/#writing-custom-template-tags
+- [x] créer un onglet par application (permanence, blogs, annuaire..)
+  - [x] commencer par annuaire
+  - [x] Pour ajouter les onglets avec une fonction : https://docs.djangoproject.com/en/4.2/howto/custom-template-tags/#writing-custom-template-tags
         Ecrire une fonction qui renvoie les noms des apps à utiliser et les afficher en onglet dans l'html.
 - [ ] terminer Css
 - [ ] afficher les structures
