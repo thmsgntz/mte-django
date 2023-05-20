@@ -71,6 +71,12 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
+            'libraries': {
+                # register custom tags!
+                # https://docs.djangoproject.com/en/4.2/howto/custom-template-tags/#howto-writing-custom-template-tags
+                # https://docs.djangoproject.com/en/4.2/topics/templates/#django.template.backends.django.DjangoTemplates
+                'mte_website_extras': 'mte_website.templatetags.mte_website_extras',
+            },
         },
     },
 ]

@@ -18,7 +18,7 @@
             "type": "python",
             "name": "Manager run",
             "file": "mte_website/manage.py",
-            "arguments": ["runserver"],
+            "arguments": ["runserver", "7000"],
             "workingDir": "$PROJECT_DIR$",
             "dependsOn": ["Manager Check"],
         },

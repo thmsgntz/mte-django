@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 
+{% load mte_website_extras %}
 {% load static %}
+{% static 'img/logo-mte-circle.png' as img_logo_mte %}
+{% static 'css/accueil/index.css' as css_stylesheet %}
+
 <head>
 	<meta name="generator" content="Hugo 0.80.0">
 	<meta charset="UTF-8">
@@ -9,7 +13,8 @@
 	<title>{% block title %}Ma Thèse Émoi{% endblock %}</title>
 	<meta name="description" content="Bienvenue sur Ma Thèse Émoi, association de soutien psychologique et sociale pour doctorant-es">
 
-	<link rel="stylesheet" href="{% static 'css/accueil/index.css' %}">
+	<link rel="stylesheet" href="{{ css_stylesheet }}">
+	{% comment %} <link rel="stylesheet" href="{% static 'css/accueil/index.css' %}"> {% endcomment %}
 	<link rel="shortcut icon" href="https://mathese-emoi.fr/favicon.ico">
 </head>
 
@@ -20,7 +25,7 @@
 		<div class="container">
 			<a class="logo__link" href="/" title="Ma Thèse Émoi" rel="home">
 				<div class="logo__item logo__imagebox">
-						<img class="logo__img" src="{% static 'img/logo-mte-circle.png' %}" alt="Logo MTE">
+						<img class="logo__img" src="{{ img_logo_mte }}" alt="Logo MTE">
 					</div><div class="logo__item logo__text">
 						<div class="logo__title">Ma Thèse Émoi</div>
 						<div class="logo__tagline">Bienveillance - Confidentialité - Solidarité</div>
@@ -50,13 +55,23 @@
 
 				</a>
 			</li>
-			<li class="menu__item">
-				<a class="menu__link" href="annuaire/">
 
-					<span class="menu__text">Annuaire</span>
+			{% show_onglets as onglets %}
+			{% for onglet in onglets %}
+    			<li>
+					<a class="menu__link" href={{ onglet.val_href }}>
+						{{ onglet.name }}
+					</a>
+				</li>
+			{% endfor %}
+
+			<li class="menu__item">
+				<a class="menu__link" href="{% url 'annuaire/index' %}">
+					<span class="menu__text">Custom Annuaire</span>
 
 				</a>
 			</li>
+
 			<li class="menu__item">
 				<a class="menu__link" href="/a-propos/">
 
@@ -82,11 +97,24 @@
 	</div>
 </nav>
 
-<div class="content main__content clearfix">
-{% block content %}
-		<p>Ici tu ne seras pas jugé·e pour ce que tu traverses pendant la thèse.
-Notre association repose sur trois valeurs : bienveillance, confidentialité et solidarité.
-Nous intervenons principalement dans la ville de Grenoble, mais si tu as des questions et que tu habites dans une autre ville, on essaiera d’y répondre également :)</p>
-{% endblock %}
+<div class="container wrapper flex">
+	<div class="primary">
+		<header class="main__header">
+			{% block content_header %}
+				<h1 class="main__title">Bienvenue</h1>
+			{% endblock %}
+		</header>
+
+		<main class="main list" role="main">
+			{% block content_body %}
+			<div class="content main__content clearfix">
+					<p>Ici tu ne seras pas jugé·e pour ce que tu traverses pendant la thèse.
+			Notre association repose sur trois valeurs : bienveillance, confidentialité et solidarité.
+			Nous intervenons principalement dans la ville de Grenoble, mais si tu as des questions et que tu habites dans une autre ville, on essaiera d’y répondre également :)</p>
+			</div>
+			{% endblock %}
+		</main>
 	</div>
+</div>
+
 </body>
